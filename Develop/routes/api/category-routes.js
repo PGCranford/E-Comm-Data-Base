@@ -19,7 +19,7 @@ router.get('/', (req, res) => {
     ]
 
   })
-    .then(dbCategoryData => res.json(dbCategoryData))
+    .then(categoryData => res.json(categoryData))
     // do I need this since it wont be a live website? 
     .catch(err => {
       console.log(err);
@@ -48,12 +48,12 @@ router.get('/:id', (req, res) => {
     ]
 
   })
-    .then(dbCategoryData => {
-      if (!dbPosdbCategoryDatatData) {
+    .then(categoryData => {
+      if (!categoryData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
-      res.json(dbCategoryData);
+      res.json(categoryData);
     })
 
 
@@ -65,7 +65,7 @@ router.post('/', (req, res) => {
     id: req.body.id,
     category_name: req.body.category_name,
   })
-    .then(dbCategoryData => res.json(dbCategoryData))
+    .then(categoryData => res.json(categoryData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
@@ -80,12 +80,12 @@ router.put('/:id', (req, res) => {
       category_id: req.params.id
     }
   })
-    .then(dbCategoryData => {
-      if (!dbCategoryData[0]) {
+    .then(categoryData => {
+      if (!categoryData[0]) {
         res.status(404).json({ message: 'No category with this ID' });
         return;
       }
-      res.json(dbCategoryData);
+      res.json(categoryData);
     })
     .catch(err => {
       console.log(err);
