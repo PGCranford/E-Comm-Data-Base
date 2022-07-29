@@ -54,6 +54,18 @@ router.get('/:id', (req, res) => {
       }
     ]
   })
+    .then(productData => {
+      if (!productData) {
+        res.status(404).json({ message: 'No product found with this id' });
+        return;
+      }
+      res.json(productData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+
 
 });
 
@@ -138,6 +150,18 @@ router.delete('/:id', (req, res) => {
       id: req.params.id
     }
   })
+    .then(productData => {
+      if (!productData) {
+        res.status(404).json({ message: 'No Product by that ID' });
+        return;
+      }
+      res.json(productData)
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    })
+
 });
 
 module.exports = router;
