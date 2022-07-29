@@ -103,7 +103,7 @@ router.delete('/:id', (req, res) => {
     }
   })
     .then(categoryData => {
-      if (!tagDacategoryDatata) {
+      if (!categoryData) {
         res.status(404).json({ message: 'No Category by that ID' });
         return;
       }

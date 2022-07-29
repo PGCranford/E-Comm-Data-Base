@@ -66,12 +66,6 @@ router.get('/:id', (req, res) => {
       }
       res.json(productData);
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
-
-
 });
 
 // create new product

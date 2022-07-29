@@ -1,5 +1,4 @@
 const { Model, DataTypes, STRING } = require('sequelize');
-
 const sequelize = require('../config/connection.js');
 
 class Tag extends Model { }
