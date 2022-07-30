@@ -5,6 +5,8 @@ This application allows for easy inventory control, sorting and locating of prod
 
 ## Walkthrough Video
 
+https://drive.google.com/file/d/1C221oRgWnYJLeEv5kvB42qINmaO0NL-M/view
+
 
 ### Made Using 
 Express, Sequilize, MYSQL, Insomnia 
