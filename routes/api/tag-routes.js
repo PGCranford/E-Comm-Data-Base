@@ -29,10 +29,9 @@ router.get('/:id', (req, res) => {
   // find a single tag by its `id`
   // be sure to include its associated Product data
   Tag.findOne({
-    attributes: [
-      'id',
-      'tag_name'
-    ],
+    where: {
+      id: req.params.id
+    },
     include: [
       {
         model: Product,
@@ -72,7 +71,7 @@ router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
   Tag.update(
     {
-      id: req.body.id
+      tag_name: req.body.tag_name
     },
     {
       where: {
