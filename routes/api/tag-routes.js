@@ -77,8 +77,12 @@ router.put('/:id', (req, res) => {
       where: {
         id: req.params.id
       }
-    }
-  )
+    })
+    .then(tagData => res.json(tagData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    })
 });
 
 
