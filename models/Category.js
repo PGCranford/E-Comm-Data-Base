@@ -18,7 +18,7 @@ Category.init(
     category_name: {
       type: DataTypes.STRING,
       allowNull: false,
-      refernces: {
+      references: {
         model: 'category',
         key: 'id'
       }
