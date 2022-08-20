@@ -11,7 +11,6 @@ Category.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      primaryKey: true,
       autoIncrement: true,
 
     },
@@ -19,7 +18,7 @@ Category.init(
       type: DataTypes.STRING,
       allowNull: false,
       references: {
-        model: 'category',
+        model: 'Category',
         key: 'id'
       }
     }
@@ -29,7 +28,7 @@ Category.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'category',
+    modelName: 'Category',
   }
 );
 
